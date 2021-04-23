@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="HotelExtractor\HotelExtractorResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HotelExtractorResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="HtmlExtractor\HtmlExtractorResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HtmlExtractorResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="SystemErrors\SystemErrorsResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SystemErrorsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="SystemMessages\SystemMessagesResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SystemMessagesResource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="HotelExtractor\HotelExtractorResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HotelExtractorResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="HtmlExtractor\HtmlExtractorResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HtmlExtractorResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SystemErrors\SystemErrorsResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SystemErrorsResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SystemMessages\SystemMessagesResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SystemMessagesResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,127 @@
+[
+  {
+    "Name": "HtmlHead",
+    "XPath": "html/head",
+    "ShouldCheckInValidation": true,
+    "ShouldShowInOutPut": false
+  },
+  {
+    "Name": "HtmlBody",
+    "XPath": "html/body",
+    "ShouldCheckInValidation": true,
+    "ShouldShowInOutPut": false
+  },
+  {
+    "Name": "TopHeader",
+    "XPath": "//*[@id=\"wrap-hotelpage-top\"]",
+    "ShouldCheckInValidation": true,
+    "ShouldShowInOutPut": false
+  },
+  {
+    "Name": "Name",
+    "XPath": "//*[@id=\"hp_hotel_name\"]",
+    "ShouldCheckInValidation": true,
+    "ShouldShowInOutPut": true
+  },
+  {
+    "Name": "Address",
+    "XPath": "//*[@id=\"hp_address_subtitle\"]",
+    "ShouldCheckInValidation": false,
+    "ShouldShowInOutPut": true
+  },
+  {
+    "Name": "Classification",
+    "XPath": "//*[@id=\"wrap-hotelpage-top\"]/h1/span[2]/span/i/@class",
+    "ShouldCheckInValidation": false,
+    "ShouldShowInOutPut": true,
+    "Type": "int"
+  },
+  {
+    "Name": "ReviewPoints",
+    "XPath": "//*[@id=\"js--hp-gallery-scorecard\"]/a/span[2]/span[1]",
+    "ShouldCheckInValidation": false,
+    "ShouldShowInOutPut": true,
+    "Type": "float"
+  },
+  {
+    "Name": "NumberOfReviews",
+    "XPath": "//*[@id=\"js--hp-gallery-scorecard\"]/span/strong",
+    "ShouldCheckInValidation": false,
+    "ShouldShowInOutPut": true,
+    "Type": "int"
+  },
+  {
+    "Name": "Description",
+    "XPath": "//*[@id=\"summary\"]",
+    "ShouldCheckInValidation": true,
+    "ShouldShowInOutPut": true
+  },
+  {
+    "Name": "RoomCategories",
+    "XPath": "//*[@id=\"maxotel_rooms\"]/tbody/tr",
+    "ShouldCheckInValidation": true,
+    "ShouldShowInOutPut": true,
+    "Childs": [
+      {
+        "Name": "Max",
+        "XPath": "./td[1]/span/@title",
+        "ShouldCheckInValidation": false,
+        "ShouldShowInOutPut": true
+      },
+      {
+        "Name": "Name",
+        "XPath": "./td[2]",
+        "ShouldCheckInValidation": false,
+        "ShouldShowInOutPut": true
+      }
+    ]
+  },
+  {
+    "Name": "AlternativeHotels",
+    "XPath": "./html/body/div[1]/div[1]/div[4]/div[5]/div/table/tbody/tr/td",
+    "ShouldCheckInValidation": false,
+    "ShouldShowInOutPut": true,
+    "Childs": [
+      {
+        "Name": "Name",
+        "XPath": "./p/a",
+        "ShouldCheckInValidation": false,
+        "ShouldShowInOutPut": true
+      },
+      {
+        "Name": "Classification",
+        "XPath": "./p/i/@class",
+        "ShouldCheckInValidation": false,
+        "ShouldShowInOutPut": true,
+        "Type": "int"
+      },
+      {
+        "Name": "ReviewPoints",
+        "XPath": "./div[1]/a/span[2]/span[1]",
+        "ShouldCheckInValidation": false,
+        "ShouldShowInOutPut": true,
+        "Type": "float"
+      },
+      {
+        "Name": "NumberOfReviews",
+        "XPath": "./div[1]/span/strong",
+        "ShouldCheckInValidation": false,
+        "ShouldShowInOutPut": true,
+        "Type": "int"
+      },
+      {
+        "Name": "NumberOfViews",
+        "XPath": "./p[2]",
+        "ShouldCheckInValidation": false,
+        "ShouldShowInOutPut": true,
+        "Type": "int"
+      },
+      {
+        "Name": "Description",
+        "XPath": "./span",
+        "ShouldCheckInValidation": false,
+        "ShouldShowInOutPut": true
+      }
+    ]
+  }
+]
