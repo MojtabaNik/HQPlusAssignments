@@ -4,6 +4,7 @@ using HQPlusAssignments.Common;
 using HQPlusAssignments.Resources.SystemErrors;
 using NUnit.Extension.DependencyInjection;
 using NUnit.Framework;
+using System.IO;
 
 namespace HQPlusAssignments.Application.Test.System
 {
@@ -28,7 +29,7 @@ namespace HQPlusAssignments.Application.Test.System
         [Test]
         public void ReadFileContent_RightPath_Test()
         {
-            var result = _fileService.ReadFileContent(FilePathHelper.GetTestDataFolder("System") + "\\test.txt");
+            var result = _fileService.ReadFileContent(Path.Combine(FilePathHelper.GetTestDataFolder("System"), "test.txt"));
             Assert.AreEqual("Test", result);
         }
     }

@@ -21,7 +21,7 @@ namespace HQPlusAssignments.Application.Test.HtmlExtractor
         public HtmlExtractorTest(IHtmlExtractorService htmlExtractorService)
         {
             _htmlExtractorService = htmlExtractorService;
-            HtmlNode = File.ReadAllText(FilePathHelper.GetTestDataFolder("HtmlExtractor") + "\\testHtml.html");
+            HtmlNode = File.ReadAllText(Path.Combine(FilePathHelper.GetTestDataFolder("HtmlExtractor"), "testHtml.html"));
             ContentTestHtmlNode = @"<html>
                                 <head>test</head>
                                 <body>
@@ -44,7 +44,7 @@ namespace HQPlusAssignments.Application.Test.HtmlExtractor
         [Test]
         public void HtmlExtractorConfigReader_EmptyConfig_Test()
         {
-            var filePath = FilePathHelper.GetTestDataFolder("HtmlExtractor") + "\\emptyConfig.json";
+            var filePath = Path.Combine(FilePathHelper.GetTestDataFolder("HtmlExtractor"), "emptyConfig.json");
 
             Assert.Throws(
                 Is.TypeOf<UserFriendlyException>().And.Message.EqualTo(HtmlExtractorResourceKeys.InvalidHtmlNodeConfig),
@@ -54,7 +54,7 @@ namespace HQPlusAssignments.Application.Test.HtmlExtractor
         [Test]
         public void HtmlExtractorConfigReader_InvalidJsonFormat_Test()
         {
-            var filePath = FilePathHelper.GetTestDataFolder("HtmlExtractor") + "\\invalidConfig.json";
+            var filePath = Path.Combine(FilePathHelper.GetTestDataFolder("HtmlExtractor"), "invalidConfig.json");
 
             Assert.Throws(
                 Is.TypeOf<UserFriendlyException>().And.Message.EqualTo(HtmlExtractorResourceKeys.InvalidHtmlNodeConfig),
@@ -64,7 +64,7 @@ namespace HQPlusAssignments.Application.Test.HtmlExtractor
         [Test]
         public void HtmlExtractorConfigReader_ValidButEmptyJsonFormat_Test()
         {
-            var filePath = FilePathHelper.GetTestDataFolder("HtmlExtractor") + "\\validButEmpty.json";
+            var filePath = Path.Combine(FilePathHelper.GetTestDataFolder("HtmlExtractor"), "validButEmpty.json");
 
             Assert.Throws(
                 Is.TypeOf<UserFriendlyException>().And.Message.EqualTo(HtmlExtractorResourceKeys.InvalidHtmlNodeConfig),
@@ -74,7 +74,7 @@ namespace HQPlusAssignments.Application.Test.HtmlExtractor
         [Test]
         public void HtmlExtractorConfigReader_ValidJsonFormat_Test()
         {
-            var filePath = FilePathHelper.GetTestDataFolder("HtmlExtractor") + "\\validConfig.json";
+            var filePath = Path.Combine(FilePathHelper.GetTestDataFolder("HtmlExtractor"), "validConfig.json");
             var result = _htmlExtractorService.HtmlExtractorConfigReader(filePath);
             Assert.That(result, Has.Length.EqualTo(11));
             Assert.That(result[0].Name, Is.EqualTo("HtmlHead"));

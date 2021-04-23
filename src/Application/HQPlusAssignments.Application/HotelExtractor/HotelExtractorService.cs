@@ -6,6 +6,7 @@ using HtmlAgilityPack;
 using HQPlusAssignments.Application.Core.HtmlExtractor;
 using HQPlusAssignments.Application.Core.HtmlExtractor.Dtos;
 using HQPlusAssignments.Common;
+using System.IO;
 
 namespace HQPlusAssignments.Application.HotelExtractor
 {
@@ -17,7 +18,7 @@ namespace HQPlusAssignments.Application.HotelExtractor
         /// </summary>
         private static HtmlExtractorNode[] _hotelExtractorNodes;
         private HtmlExtractorNode[] HotelExtractorNodes => _hotelExtractorNodes
-            ?? _htmlExtractorService.HtmlExtractorConfigReader(FilePathHelper.CallingAssemblyDirectoryPath + "\\Assets\\BookingComHtmlNodes.json");
+            ?? _htmlExtractorService.HtmlExtractorConfigReader(Path.Combine(FilePathHelper.CallingAssemblyDirectoryPath, "Assets", "BookingComHtmlNodes.json"));
 
         private readonly IFileService _fileService;
         private readonly IHtmlExtractorService _htmlExtractorService;
@@ -40,7 +41,7 @@ namespace HQPlusAssignments.Application.HotelExtractor
         public string ExtractHotelInformationFromHtml()
         {
             //Read File ContentPart
-            var htmlContent = _fileService.ReadFileContent(FilePathHelper.CallingAssemblyDirectoryPath + "\\Assets\\extraction.booking.html");
+            var htmlContent = _fileService.ReadFileContent(Path.Combine(FilePathHelper.CallingAssemblyDirectoryPath, "Assets", "extraction.booking.html"));
 
             //Validate html to see if it includes html tags which we need them.
             if (string.IsNullOrWhiteSpace(htmlContent))
