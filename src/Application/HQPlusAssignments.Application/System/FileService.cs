@@ -42,5 +42,37 @@ namespace HQPlusAssignments.Application.System
                 throw new UserFriendlyException(SystemErrorResourceKeys.SystemUnhandledException);
             }
         }
+
+        /// <summary>
+        /// Read file content as byte[] from a path.
+        /// </summary>
+        /// <param name="filePath">file path based on os</param>
+        /// <returns>file content as byte[]</returns>
+        public byte[] ReadFileBytes(string filePath)
+        {
+            try
+            {
+                return File.Exists(filePath)
+                    ? File.ReadAllBytes(filePath)
+                    : throw new UserFriendlyException(SystemErrorResourceKeys.FileNotFound);
+            }
+            catch (UserFriendlyException)
+            {
+                throw;
+            }
+            catch (IOException e)
+            {
+                throw new UserFriendlyException(e.Message);
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                throw new UserFriendlyException(e.Message);
+            }
+            catch (Exception)
+            {
+                //ToDo: Log Exception
+                throw new UserFriendlyException(SystemErrorResourceKeys.SystemUnhandledException);
+            }
+        }
     }
 }

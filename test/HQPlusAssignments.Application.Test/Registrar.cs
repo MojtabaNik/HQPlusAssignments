@@ -1,5 +1,9 @@
-﻿using HQPlusAssignments.Application.Core.System;
+﻿using Hangfire;
+using HQPlusAssignments.Application.Core.Settings;
+using HQPlusAssignments.Application.Core.System;
 using HQPlusAssignments.Application.System;
+using Microsoft.Extensions.Options;
+using Moq;
 using NUnit.Extension.DependencyInjection;
 using NUnit.Extension.DependencyInjection.Abstractions;
 using NUnit.Extension.DependencyInjection.Unity;
@@ -39,6 +43,17 @@ namespace HQPlusAssignments.Application.Test
                 if (implementation == null) continue;
                 container.RegisterType(@interface, implementation);
             }
+
+            container.RegisterInstance(typeof(IOptions<MailSettings>), Options.Create<MailSettings>(new MailSettings
+            {
+                Mail = "c93ab978aca04f",
+                DisplayName = "Mojtaba Nikoonejad",
+                Host = "smtp.mailtrap.io",
+                Port = 587,
+                Password = "4e250bb7e1f585"
+            }));
+
+            container.RegisterInstance(typeof(IBackgroundJobClient), new Mock<IBackgroundJobClient>().Object);
         }
     }
 }

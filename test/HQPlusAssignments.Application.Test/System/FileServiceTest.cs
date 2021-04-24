@@ -32,5 +32,21 @@ namespace HQPlusAssignments.Application.Test.System
             var result = _fileService.ReadFileContent(Path.Combine(FilePathHelper.GetTestDataFolder("System"), "test.txt"));
             Assert.AreEqual("Test", result);
         }
+
+
+        [Test]
+        public void ReadFileBytes_WrongPath_Test()
+        {
+            Assert.Throws(
+           Is.TypeOf<UserFriendlyException>().And.Message.EqualTo(SystemErrorResourceKeys.FileNotFound),
+           () => _fileService.ReadFileBytes("test"));
+        }
+
+        [Test]
+        public void ReadFileBytes_RightPath_Test()
+        {
+            var result = _fileService.ReadFileBytes(Path.Combine(FilePathHelper.GetTestDataFolder("System"), "test.txt"));
+            Assert.That(result.Length, Is.GreaterThan(0));
+        }
     }
 }

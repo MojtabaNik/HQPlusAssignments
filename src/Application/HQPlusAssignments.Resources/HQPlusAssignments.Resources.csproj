@@ -15,6 +15,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>HtmlExtractorResource.resx</DependentUpon>
     </Compile>
+    <Compile Update="Report\HotelReportResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HotelReportResource.resx</DependentUpon>
+    </Compile>
     <Compile Update="SystemErrors\SystemErrorsResource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -35,6 +40,10 @@
     <EmbeddedResource Update="HtmlExtractor\HtmlExtractorResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>HtmlExtractorResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Report\HotelReportResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HotelReportResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="SystemErrors\SystemErrorsResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>

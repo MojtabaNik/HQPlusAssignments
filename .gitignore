@@ -399,3 +399,4 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+/src/Presentation/HQPlusAssignments.Services.Api/appsettings.Development.json
