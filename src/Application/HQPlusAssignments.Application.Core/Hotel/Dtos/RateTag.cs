@@ -1,4 +1,4 @@
-﻿namespace HQPlusAssignments.Application.Core.Report.Dtos
+﻿namespace HQPlusAssignments.Application.Core.Hotel.Dtos
 {
     public class RateTag
     {

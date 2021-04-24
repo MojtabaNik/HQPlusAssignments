@@ -1,5 +1,6 @@
 ﻿using Hangfire;
 using HQPlusAssignments.Application.Core.Exceptions;
+using HQPlusAssignments.Application.Core.Hotel.Dtos;
 using HQPlusAssignments.Application.Core.Report;
 using HQPlusAssignments.Application.Core.Report.Dtos;
 using HQPlusAssignments.Application.Core.System;
@@ -48,7 +49,7 @@ namespace HQPlusAssignments.Application.Report
 
             try
             {
-                return JsonConvert.DeserializeObject<HotelExcelInputDto>(jsonContent).HotelRates.Select(x => new HotelExcelReportDto
+                return JsonConvert.DeserializeObject<HotelInputDto>(jsonContent).HotelRates.Select(x => new HotelExcelReportDto
                 {
                     Arrival_Date = x.TargetDay.ToString("dd'.'MM'.'yy", CultureInfo.InvariantCulture),
                     Departure_Date = x.TargetDay.AddDays(x.Los).ToString("dd'.'MM'.'yy", CultureInfo.InvariantCulture),
@@ -79,8 +80,7 @@ namespace HQPlusAssignments.Application.Report
         /// </summary>
         /// <param name="dateTime"></param>
         /// <param name="toEmail"></param>
-        /// <param name="body"></param>
-        /// <param name="subject"></param>
+        /// <returns>Job Id</returns>
         [DisableConcurrentExecution(timeoutInSeconds: 10 * 60)]
         public string SendScheduleReport(DateTime dateTime, string toEmail)
         {

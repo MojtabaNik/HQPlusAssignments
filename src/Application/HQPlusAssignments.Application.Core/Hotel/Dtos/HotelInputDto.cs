@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace HQPlusAssignments.Application.Core.Report.Dtos
+namespace HQPlusAssignments.Application.Core.Hotel.Dtos
 {
 
-    public class HotelExcelInputDto
+    public class HotelInputDto
     {
         public Hotel Hotel { get; set; }
         public List<HotelRate> HotelRates { get; set; }
