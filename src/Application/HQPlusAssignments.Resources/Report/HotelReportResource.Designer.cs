@@ -61,6 +61,15 @@ namespace HQPlusAssignments.Resources.Report {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input time is invalid!.
+        /// </summary>
+        internal static string InvalidDateTime {
+            get {
+                return ResourceManager.GetString("InvalidDateTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Json content for hotel rates is not valid.
         /// </summary>
         internal static string InvalidJsonContent {
