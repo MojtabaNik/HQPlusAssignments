@@ -1,4 +1,4 @@
-﻿namespace HQPlusAssignments.Application.Core.Report.Dtos
+﻿namespace HQPlusAssignments.Application.Core.Hotel.Dtos
 {
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
     public class Hotel
