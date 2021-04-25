@@ -20,7 +20,6 @@ namespace HQPlusAssignments.Common.Extensions
             //Set ExcelPackage License
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-            // Get your template and output file paths
             using (var pck = new ExcelPackage())
             {
                 //Create the worksheet

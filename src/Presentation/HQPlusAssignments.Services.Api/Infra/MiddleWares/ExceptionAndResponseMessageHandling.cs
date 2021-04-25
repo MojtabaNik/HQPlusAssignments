@@ -32,8 +32,6 @@ namespace HQPlusAssignments.Services.Api.Infra.MiddleWares
             _env = env;
         }
 
-
-
         /// <summary>
         /// Invoke method which runs on middle ware , when a request come out from application
         /// </summary>

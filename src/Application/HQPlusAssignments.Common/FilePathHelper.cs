@@ -9,7 +9,7 @@ namespace HQPlusAssignments.Common
     public static class FilePathHelper
     {
         /// <summary>
-        /// Get Calling Assembly Assets Directory
+        /// Get Calling Assembly Directory
         /// </summary>
         public static string CallingAssemblyDirectoryPath
         {

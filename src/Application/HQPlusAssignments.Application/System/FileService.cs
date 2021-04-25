@@ -3,14 +3,11 @@ using HQPlusAssignments.Application.Core.System;
 using HQPlusAssignments.Resources.SystemErrors;
 using System;
 using System.IO;
-using System.Reflection;
 
 namespace HQPlusAssignments.Application.System
 {
     public class FileService : IFileService
     {
-
-
         /// <summary>
         /// Read file content as text from a path.
         /// </summary>

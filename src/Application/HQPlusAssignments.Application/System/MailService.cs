@@ -20,6 +20,10 @@ namespace HQPlusAssignments.Application.System
             _mailSettings = mailSettings.Value;
         }
 
+        /// <summary>
+        /// This method is used to send email with attachments using smtp protocol
+        /// </summary>
+        /// <param name="mailRequest">Mail Request</param>
         public async Task SendEmailAsync(MailRequest mailRequest)
         {
             //Create Email

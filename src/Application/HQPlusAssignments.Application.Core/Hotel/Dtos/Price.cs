@@ -6,6 +6,4 @@
         public decimal NumericFloat { get; set; }
         public int NumericInteger { get; set; }
     }
-
-
 }
